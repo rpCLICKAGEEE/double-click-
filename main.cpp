@@ -32,9 +32,9 @@ void SetCPS(int& cps) {
 
 int main() {
     std::string username, password;
-    bool doubleClickEnabled = false; // Indicateur pour savoir si le double clic est activé
+    bool doubleClickEnabled = false;
     int cps = 20; // Défaut : 20 clics par seconde
-    int delay = 1000 / cps; // Défaut : délai entre les clics en millisecondes pour le nombre de CPS spécifié
+    int delay = 1000 / cps; 
 
     SetConsoleTitleA("");
 
@@ -51,7 +51,7 @@ int main() {
         return 0;
     }
     std::default_random_engine generator(std::chrono::system_clock::now().time_since_epoch().count());
-    std::uniform_int_distribution<int> distribution(-20, 20); // Distribution uniforme de -20 à 20 millisecondes
+    std::uniform_int_distribution<int> distribution(-20, 20); 
 
     while (true) {
         if (doubleClickEnabled && (GetAsyncKeyState(VK_LBUTTON) & 0x8000)) {
